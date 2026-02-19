@@ -28,9 +28,13 @@
   Font - **#region Font**, **#endregion Font**
 
   Utility - **#region Utility**, **#endregion Utility**
+  
   Visuals - **#region Visuals**, **#endregion Visuals**
+  
   Enemies - **#region Enemies**, **#endregion Enemies**,
+  
   Entities - **#region Entities**, **#endregion Entities**
+  
   UI - **#region UI**, **#endregion UI**
   
   Game - **#region Game**, **#endregion Game** {
@@ -38,8 +42,11 @@
   }
 
   Connections - **#region Connections**, **#endregion Connections** {
+  
     Renderstepped - **#subregion Renderstepped, #region Connections**, **#endsubregion Renderstepped, #region Connections**
+    
     Heartbeat - **#subregion Heartbeat, #region Connections**, **#endsubregion Heartbeat, #region Connections**
+    
   }
 
   Hooks - **#region Hooks**, **#endregion Hooks** {
