@@ -14,12 +14,12 @@
 
   Create - **#region Create**, **#endregion Create** {
   
-    Holder - **#subregion Holder, #region Create**, **#endsubregion Holder, #region Create**
-    Window - **#subregion Window, #region Create**, **#endsubregion Window, #region Create** {
+    Holder - #subregion Holder, #region Create, #endsubregion Holder, #region Create
+    Window - #subregion Window, #region Create, #endsubregion Window, #region Create {
     
-      Tab - **#subregion Tab, #region Window**, **#endsubregion Tab, #region Window** {
+      Tab - #subregion Tab, #region Window, #endsubregion Tab, #region Window {
       
-        Section - **#subregion Section, #region Tab**, **#endsubregion Section, #region Tab**
+        Section - #subregion Section, #region Tab, #endsubregion Section, #region Tab
       }
     }
   }
@@ -31,8 +31,8 @@
 
   Cheat - **#region Cheat**, **#endregion Cheat** {
   
-    Metatables - **#subregion Metatables, #region Cheat**, **#endsubregion Metatables, #region Cheat**
-    Functions - **#subregion Functions, #region Cheat**, **#endsubregion Functions, #region Cheat**
+    Metatables - #subregion Metatables, #region Cheat, #endsubregion Metatables, #region Cheat
+    Functions - #subregion Functions, #region Cheat, #endsubregion Functions, #region Cheat
   }
 
 
@@ -49,19 +49,20 @@
   UI - **#region UI**, **#endregion UI**
   
   Game - **#region Game**, **#endregion Game** {
-    Garbage Collection - **#subregion Garbage Collection, #region Game**, **#endsubregion Garbage Collection, #region Game**
+  
+    Garbage Collection - #subregion Garbage Collection, #region Game, #endsubregion Garbage Collection, #region Game
   }
 
   Connections - **#region Connections**, **#endregion Connections** {
   
-    Renderstepped - **#subregion Renderstepped, #region Connections**, **#endsubregion Renderstepped, #region Connections**
-    Heartbeat - **#subregion Heartbeat, #region Connections**, **#endsubregion Heartbeat, #region Connections**
+    Renderstepped - #subregion Renderstepped, #region Connections, #endsubregion Renderstepped, #region Connections
+    Heartbeat - #subregion Heartbeat, #region Connections, #endsubregion Heartbeat, #region Connections
   }
 
   Hooks - **#region Hooks**, **#endregion Hooks** {
   
-    Metamethods - **#subregion Metamethods, #region Hooks**, **#endsubregion Metamethods, #region Hooks**
-    Game Functions - **#subregion Game Functions, #region Hooks**, **#endsubregion Game Functions, #region Hooks**
+    Metamethods - #subregion Metamethods, #region Hooks, #endsubregion Metamethods, #region Hooks
+    Game Functions - #subregion Game Functions, #region Hooks, #endsubregion Game Functions, #region Hooks
   }
 
   Enemies & Flag Creation - **#region Enemies & Flag Creation**, **#endregion Enemies & Flag Creation**
