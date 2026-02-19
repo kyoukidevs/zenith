@@ -21,7 +21,7 @@
   Variables - **#region Variables**, **#endregion Variables**
 
   Cheat - **#region Cheat**, **#endregion Cheat** {
-    Metatables - **#subregion Metatables, #region Cheat**, **#endsubregion Metatables, #region Cheat**
+  Metatables - **#subregion Metatables, #region Cheat**, **#endsubregion Metatables, #region Cheat**
     Functions - **#subregion Functions, #region Cheat**, **#endsubregion Functions, #region Cheat**
   }
 
