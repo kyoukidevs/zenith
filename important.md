@@ -16,9 +16,7 @@
   
     Holder - #subregion Holder, #region Create, #endsubregion Holder, #region Create
     Window - #subregion Window, #region Create, #endsubregion Window, #region Create {
-    
       Tab - #subregion Tab, #region Window, #endsubregion Tab, #region Window {
-      
         Section - #subregion Section, #region Tab, #endsubregion Section, #region Tab
       }
     }
