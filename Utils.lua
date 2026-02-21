@@ -77,6 +77,29 @@ return function(IsStudio)
 			end
 		end)
 	end
+
+	Utility.Round = function(self, Value, Decimals)
+		return math.round(Value / Decimals) * Decimals 
+	end
+
+	Utility.CommaValue = function(self, Value, Decimals)
+		if Decimals < 1 then
+			return string.format("%.2f", Value)
+		else
+			return tostring(math.floor(Value + 0.5))
+		end
+	end
+
+	Utility.SafeCall = function(self, Callback, ...)
+		local Success, Error = pcall(Callback, ...)
+
+		if not Success and Error then
+			warn("Zenith Stack Begin\nCall Failed: "..Error.."\nZenith Stack End")
+			return false 
+		end
+
+		return true, ...
+	end
 	
 	--#endregion Functions
 	
