@@ -100,6 +100,11 @@ return function(IsStudio)
 
 		return true, ...
 	end
+
+	Utility.ButtonColor = function(self, Instance, Colors)
+		Colors = Colors or {}
+		
+	end
 	
 	--#endregion Functions
 	
