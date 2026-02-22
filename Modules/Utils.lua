@@ -2,7 +2,7 @@
 -- // Updated: 22.02.2026
 
 return function(IsStudio)
-  
+
 	local DataModel = game 
 
 	local cloneref, gethui 
@@ -99,44 +99,45 @@ return function(IsStudio)
 
 	-- // Dont tested yet
 	Utility.TweenVisiblity = function(self, Instance, Bool, Time)
-		local Descendants = {}
-
-		for Index, Value in Instance:GetDescendants() do
-			table.insert(Descendants, Value)
-		end
+		local Descendants = Instance:GetDescendants()
 
 		table.insert(Descendants, Instance)
 
 		local GetProperty = function(self)
-			if self:IsA("Image") then
-				return {
-					["ImageTransparency"] = Bool and 0 or 1,
-					["BackgroundTransparency"] = Bool and 0 or 1
-				}
+			if self:IsA("ImageLabel") or self:IsA("ImageButton") then
+				return {"ImageTransparency", "BackgroundTransparency"}
 			elseif self:IsA("TextButton") or self:IsA("TextLabel") or self:IsA("TextBox") then
-				return {
-					["TextTransparency"] = Bool and 0 or 1, 
-					["BackgroundTransparency"] = Bool and 0 or 1
-				}
+				return {"TextTransparency", "BackgroundTransparency"}
 			elseif self:IsA("UIStroke") then
-				return {
-					["Transparency"] = Bool and 0 or 1
-				}
+				return {"Transparency"}
 			elseif self:IsA("Frame") or self:IsA("ScrollingFrame") then
-				return {
-					["BackgroundTransparency"] = Bool and 0 or 1
-				}
+				return {"BackgroundTransparency"}
 			end
+			
+			return {}
 		end
 
 		for Index, Value in Descendants do
 			local Properties = GetProperty(Value)
 
-			local Tween = Services.TweenService:Create(Value, TweenInfo.new(Time, Enum.EasingStyle.Quad), Properties)
+			for _, Property in Properties do
+				local OldProperty = Value[Property]
+				Value[Property] = Bool and 1 or OldProperty
 
-			Tween:Play()
+				local Tween = Services.TweenService:Create(Value, TweenInfo.new(Time, Enum.EasingStyle.Quad), {
+					[Property] = Bool and OldProperty or 1 
+				})
+					Tween:Play()
+
+				Tween.Completed:Connect(function()
+					if not Bool then
+						task.wait()
+						Value[Property] = OldProperty
+					end
+				end)
+			end
 		end
-  	end
-	
+	end
+
 	return Utility 
 end
