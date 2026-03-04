@@ -1,5 +1,5 @@
 -- // Special Utils For Library, etc.
--- // Updated: 22.02.2026
+-- // Updated: 04.03.2026
 
 return function(IsStudio)
 
@@ -137,6 +137,14 @@ return function(IsStudio)
 				end)
 			end
 		end
+	end
+
+	Utility.IsMouseOverInstance = function(self, Instance)
+		local ClientMouse = Mouse 
+
+		local MousePosition = Vector2.new(ClientMouse.X, ClientMouse.Y)
+
+		return MousePosition.X >= Instance.AbsolutePosition.X and MousePosition.X <= Instance.AbsolutePosition.X 	+ Instance.AbsoluteSize.X and MousePosition.Y >= Instance.AbsolutePosition.Y and MousePosition.Y <= Instance.AbsolutePosition.Y + Instance.AbsoluteSize.Y
 	end
 
 	return Utility 
