@@ -3673,3 +3673,5 @@ do
         end
     end
 end
+
+return Menu
