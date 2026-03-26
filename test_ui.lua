@@ -645,7 +645,7 @@ do
         Fonts = {
             ["Minecraftia"] = {
                 [1] = Menu.ImportFont("Minecraftia", EncodedAssets["Minecraftia"]),
-                [2] = 10,
+                [2] = 13, -- // fontsize
                 [3] = Theme.White
             }
         }
