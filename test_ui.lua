@@ -651,7 +651,7 @@ do
             },
             ["Proggy"] = {
                 [1] = Menu.ImportFont("Proggy", EncodedAssets["Proggy"]),
-                [2] = 10,
+                [2] = 12,
                 [3] = Theme.White
             }
         }
@@ -1108,7 +1108,7 @@ do
                     do
                         local TabFrame = Tab[Side]
 
-                        local Outline = Menu.Draw("Frame", { Parent = TabFrame, Size = NewUDim2(1, 0, 0, Fill and TabFrame.AbsoluteSize.Y or Size), BackgroundColor3 = Theme.B, BorderColor3 = Theme.C })
+                        local Outline = Menu.Draw("Frame", { Parent = TabFrame, Size = NewUDim2(1, 0, 0, 0), BackgroundColor3 = Theme.B, BorderColor3 = Theme.C, AutomaticSize = Enum.AutomaticSize.Y})
 
                         local Inline = Menu.Draw("ScrollingFrame", { Parent = Outline, Size = NewUDim2(1, 0, 1, 0), BorderSizePixel = 0, BackgroundColor3 = Theme.B, ScrollingEnabled = false, CanvasSize = EmptyUDim2, ScrollBarThickness = 1, VerticalScrollBarInset = "ScrollBar", ClipsDescendants = true, ScrollBarImageColor3 = Theme.Accent, MidImage = "rbxassetid://7783554086", TopImage = "rbxassetid://7783554086", BottomImage = "rbxassetid://7783554086" })
 
