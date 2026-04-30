@@ -77,7 +77,7 @@ utils.DeepCopy = function(table)
 end
 
 utils.Round = function(self, Value, Decimals)
-	math.round(Value / Decimals) * Decimals
+	return math.round(Value / Decimals) * Decimals
 end
 
 utils.CommaValue = function(self, Increment, Val)
