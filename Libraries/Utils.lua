@@ -2,7 +2,7 @@
 local utils = {}
 
 -- vectors shit 
-utils.to_vector2 = function(vector)
+utils.To2D = function(vector)
     if typeof(vector) ~= "Vector3" then
         return nil 
     end
@@ -10,7 +10,7 @@ utils.to_vector2 = function(vector)
     return Vector2.new(vector.X, vector.Y)
 end
 
-utils.floor_vector = function(vector)
+utils.FloorVector = function(vector)
     if typeof(vector) == "Vector2" then
         return Vector2.new(math.floor(vector.X), math.floor(vector.Y))
     else
@@ -18,7 +18,7 @@ utils.floor_vector = function(vector)
     end
 end
 
-utils.get_bounding_box = function(model, orientation)
+utils.GetBoundingBox = function(model, orientation)
     local parts = type(model) == "table" and model or nil 
     orientation = orientation or CFrame.new()
 
@@ -62,7 +62,7 @@ utils.get_bounding_box = function(model, orientation)
 	return wCf, (omax - omin)
 end
 
-utils.deep_copy = function(table)
+utils.DeepCopy = function(table)
     local copy = {}
 
     for k,v in table do
@@ -76,7 +76,23 @@ utils.deep_copy = function(table)
     return copy 
 end
 
-utils.rotate = function(cf)
+utils.Round = function(self, Value, Decimals)
+	math.round(Value / Decimals) * Decimals
+end
+
+utils.CommaValue = function(self, Increment, Val)
+	if Increment > 1 then
+		return string.format("%.2f", Val)
+	else
+		return tostring(math.floor(Val + 0.5))
+	end
+end
+
+utils.SafeCall = function(self, Callback)
+	pcall(Callback)
+end
+
+utils.Rotate = function(cf)
     local x,y,z = cf:ToOrientation()
     return CFrame.new(cf.Position) * CFrame.Angles(0, y, 0)
 end
